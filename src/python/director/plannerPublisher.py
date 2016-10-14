@@ -52,6 +52,7 @@ class PlannerPublisher(object):
       opt.update({'timeSamples':additionalTimeSamples})
     opt['jointLimits']=self.jointLimits
     msg.options = json.dumps(opt)
+    del opt['jointLimits']
     return msg
 
   def processIK(self, constraints, endPoseName="", nominalPoseName="", seedPoseName="", additionalTimeSamples=None):
